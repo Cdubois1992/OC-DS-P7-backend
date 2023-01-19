@@ -98,8 +98,18 @@ class Client_Target(BaseModel):
 
 
 #
+# --- Welcome message ---
+#
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the API for Loan Default prediction"}
+
+
+#
 # --- POST request to get the predicted target + probability ---
 #
+
 
 
 @app.post('/predict', response_model=Client_Target)
@@ -115,4 +125,4 @@ def model_predict(input: Client_data):
 
 
 if __name__ == "__main__":
-    uvicorn.run("fast_api:app")
+    uvicorn.run("main:app")
