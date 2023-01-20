@@ -124,5 +124,3 @@ def model_predict(input: Client_data):
     }
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app")
